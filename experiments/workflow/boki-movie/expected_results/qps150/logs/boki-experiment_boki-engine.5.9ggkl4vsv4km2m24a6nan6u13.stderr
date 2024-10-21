@@ -2009,20 +2009,4 @@ I0819 00:16:55.488752 IO-1/EL  io_uring.cpp:123] io_uring[1]: register fd 624, 1
 I0819 00:16:55.488765 IO-2/EL  io_uring.cpp:123] io_uring[2]: register fd 625, 152 registered fds in total
 I0819 00:16:55.488774 IO-1/EL  buffer_pool.h:26] BufferPool[IOUring[1]-1]: Allocate new buffer, current buffer count is 19
 I0819 00:16:55.488777 IO-2/EL  buffer_pool.h:26] BufferPool[IOUring[2]-1]: Allocate new buffer, current buffer count is 19
-I0819 00:16:55.488781 IO-1/EL  io_worker.cpp:101] IO-1: New connection of type 0, total of type 0 is 3
-I0819 00:16:55.488783 IO-2/EL  io_worker.cpp:101] IO-2: New connection of type 0, total of type 0 is 3
-I0819 00:16:55.488774 IO-3/EL  io_uring.cpp:123] io_uring[3]: register fd 626, 152 registered fds in total
-I0819 00:16:55.488796 IO-3/EL  buffer_pool.h:26] BufferPool[IOUring[3]-1]: Allocate new buffer, current buffer count is 19
-I0819 00:16:55.488784 IO-0/EL  io_uring.cpp:123] io_uring[0]: register fd 627, 154 registered fds in total
-I0819 00:16:55.488805 IO-3/EL  io_worker.cpp:101] IO-3: New connection of type 0, total of type 0 is 3
-I0819 00:16:55.488812 IO-0/EL  buffer_pool.h:26] BufferPool[IOUring[0]-1]: Allocate new buffer, current buffer count is 20
-I0819 00:16:55.488822 IO-0/EL  io_worker.cpp:101] IO-0: New connection of type 0, total of type 0 is 4
-I0819 00:16:55.488830 IO-2/EL  io_uring.cpp:123] io_uring[2]: register fd 629, 153 registered fds in total
-I0819 00:16:55.488837 IO-2/EL  buffer_pool.h:26] BufferPool[IOUring[2]-1]: Allocate new buffer, current buffer count is 20
-I0819 00:16:55.488840 IO-2/EL  io_worker.cpp:101] IO-2: New connection of type 0, total of type 0 is 4
-I0819 00:16:55.488923 IO-1/EL  io_uring.cpp:123] io_uring[1]: register fd 628, 154 registered fds in total
-I0819 00:16:55.488945 IO-1/EL  buffer_pool.h:26] BufferPool[IOUring[1]-1]: Allocate new buffer, current buffer count is 20
-I0819 00:16:55.488954 IO-1/EL  io_worker.cpp:101] IO-1: New connection of type 0, total of type 0 is 4
-I0819 00:16:55.489015 IO-3/EL  io_uring.cpp:123] io_uring[3]: register fd 630, 153 registered fds in total
-I0819 00:16:55.489030 IO-3/EL  buffer_pool.h:26] BufferPool[IOUring[3]-1]: Allocate new buffer, current buffer count is 20
-I0819 00:16:55.489035 IO-3/EL  io_worker.cpp:101] IO-3: New connection of type 0, total of type 0 is 4
+I0819 00:16:55.488781 IO-1/EL  io_worker.cpp:1

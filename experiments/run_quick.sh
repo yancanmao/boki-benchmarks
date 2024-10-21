@@ -2,17 +2,17 @@
 ROOT_DIR=`realpath $(dirname $0)/..`
 
 # Message queue workload for BokiQueue and Pulsar
-RUN_QUEUE_BOKI=y
-RUN_QUEUE_PUSLAR=y
-RUN_QUEUE_SQS=y
+RUN_QUEUE_BOKI=n
+RUN_QUEUE_PUSLAR=n
+RUN_QUEUE_SQS=n
 
 # Retwis workload for BokiStore and MongoDB
 RUN_STORE_BOKI=y
-RUN_STORE_MONGO=y
+RUN_STORE_MONGO=n
 
 # Workflow workload for BokiFlow and Beldi
-RUN_WORKFLOW_BOKI=y
-RUN_WORKFLOW_BELDI=y
+RUN_WORKFLOW_BOKI=n
+RUN_WORKFLOW_BELDI=n
 
 HELPER_SCRIPT=$ROOT_DIR/scripts/exp_helper
 
@@ -86,7 +86,7 @@ BASE_DIR=$ROOT_DIR/experiments/retwis/boki
 
 $HELPER_SCRIPT start-machines --base-dir=$BASE_DIR --instance-iam-role $BOKI_MACHINE_IAM
 
-$BASE_DIR/run_once.sh con128 128
+# $BASE_DIR/run_once.sh con128 128
 $BASE_DIR/run_once.sh con192 192
 
 $HELPER_SCRIPT stop-machines --base-dir=$BASE_DIR
@@ -124,19 +124,27 @@ BASE_DIR=$ROOT_DIR/experiments/workflow/boki-hotel
 
 $HELPER_SCRIPT start-machines --base-dir=$BASE_DIR --instance-iam-role $BOKI_MACHINE_IAM
 
-$BASE_DIR/run_once.sh qps100 100
-$BASE_DIR/run_once.sh qps200 200
+QPS_VALUES=(5000 6000 7000 8000)
+
+for QPS in "${QPS_VALUES[@]}"; do
+  echo "Running QPS test for $QPS QPS"
+  $BASE_DIR/run_once.sh "qps$QPS" $QPS
+done
 
 $HELPER_SCRIPT stop-machines --base-dir=$BASE_DIR
 
-BASE_DIR=$ROOT_DIR/experiments/workflow/boki-movie
+# BASE_DIR=$ROOT_DIR/experiments/workflow/boki-movie
 
-$HELPER_SCRIPT start-machines --base-dir=$BASE_DIR --instance-iam-role $BOKI_MACHINE_IAM
+# $HELPER_SCRIPT start-machines --base-dir=$BASE_DIR --instance-iam-role $BOKI_MACHINE_IAM
 
-$BASE_DIR/run_once.sh qps100 100
-$BASE_DIR/run_once.sh qps150 150
+# QPS_VALUES=(200 400 600 800 1000 1200 1400 1600 1800)
 
-$HELPER_SCRIPT stop-machines --base-dir=$BASE_DIR
+# for QPS in "${QPS_VALUES[@]}"; do
+#   echo "Running QPS test for $QPS QPS"
+#   $BASE_DIR/run_once.sh "qps$QPS" $QPS
+# done
+
+# $HELPER_SCRIPT stop-machines --base-dir=$BASE_DIR
 
 echo "====== Finish running BokiFlow experiments ======"
 else
@@ -152,19 +160,27 @@ BASE_DIR=$ROOT_DIR/experiments/workflow/beldi-hotel
 
 $HELPER_SCRIPT start-machines --base-dir=$BASE_DIR --instance-iam-role $BOKI_MACHINE_IAM
 
-$BASE_DIR/run_once.sh qps100 100
-$BASE_DIR/run_once.sh qps200 200
+QPS_VALUES=(5000 6000 7000 8000)
+
+for QPS in "${QPS_VALUES[@]}"; do
+  echo "Running QPS test for $QPS QPS"
+  $BASE_DIR/run_once.sh "qps$QPS" $QPS
+done
 
 $HELPER_SCRIPT stop-machines --base-dir=$BASE_DIR
 
-BASE_DIR=$ROOT_DIR/experiments/workflow/beldi-movie
+# BASE_DIR=$ROOT_DIR/experiments/workflow/beldi-movie
 
-$HELPER_SCRIPT start-machines --base-dir=$BASE_DIR --instance-iam-role $BOKI_MACHINE_IAM
+# $HELPER_SCRIPT start-machines --base-dir=$BASE_DIR --instance-iam-role $BOKI_MACHINE_IAM
 
-$BASE_DIR/run_once.sh qps100 100
-$BASE_DIR/run_once.sh qps150 150
+# QPS_VALUES=(200 400 600 800 1000 1200 1400 1600 1800)
 
-$HELPER_SCRIPT stop-machines --base-dir=$BASE_DIR
+# for QPS in "${QPS_VALUES[@]}"; do
+#   echo "Running QPS test for $QPS QPS"
+#   $BASE_DIR/run_once.sh "qps$QPS" $QPS
+# done
+
+# $HELPER_SCRIPT stop-machines --base-dir=$BASE_DIR
 
 echo "====== Finish running Beldi experiments ======"
 else

@@ -64,19 +64,19 @@ ssh -q $MANAGER_HOST -- uname -a >>$EXP_DIR/kernel_version
 ssh -q $CLIENT_HOST -- curl -X POST http://$ENTRY_HOST:8080/function/RetwisInit
 
 ssh -q $CLIENT_HOST -- docker run -v /tmp:/tmp \
-    zjia/boki-retwisbench:sosp-ae \
+    yancanmao/boki-retwisbench:sosp-ae \
     cp /retwisbench-bin/create_users /tmp/create_users
 
 ssh -q $CLIENT_HOST -- /tmp/create_users \
     --faas_gateway=$ENTRY_HOST:8080 --num_users=$NUM_USERS --concurrency=16
 
 ssh -q $CLIENT_HOST -- docker run -v /tmp:/tmp \
-    zjia/boki-retwisbench:sosp-ae \
+    yancanmao/boki-retwisbench:sosp-ae \
     cp /retwisbench-bin/benchmark /tmp/benchmark
 
 ssh -q $CLIENT_HOST -- /tmp/benchmark \
     --faas_gateway=$ENTRY_HOST:8080 --num_users=$NUM_USERS \
-    --percentages=15,30,50,5 \
+    --percentages=25,25,25,25 --zipf_s=1.8 \
     --duration=180 --concurrency=$CONCURRENCY >$EXP_DIR/results.log
 
 $HELPER_SCRIPT collect-container-logs --base-dir=$BASE_DIR --log-path=$EXP_DIR/logs

@@ -10,6 +10,6 @@ require (
 	go.mongodb.org/mongo-driver v1.4.6
 )
 
-replace cs.utexas.edu/zjia/faas => /src/boki/worker/golang
+replace cs.utexas.edu/zjia/faas => /home/ubuntu/boki-benchmarks/boki/worker/golang
 
-replace cs.utexas.edu/zjia/faas/slib => /src/boki/slib
+replace cs.utexas.edu/zjia/faas/slib => /home/ubuntu/boki-benchmarks/boki/slib

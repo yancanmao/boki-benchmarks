@@ -1615,36 +1615,4 @@ I0818 23:38:41.789829 IO-1/EL  io_uring.cpp:123] io_uring[1]: register fd 497, 1
 I0818 23:38:41.789835 IO-3/EL  buffer_pool.h:26] BufferPool[IOUring[3]-1]: Allocate new buffer, current buffer count is 17
 I0818 23:38:41.789841 IO-0/EL  buffer_pool.h:26] BufferPool[IOUring[0]-1]: Allocate new buffer, current buffer count is 18
 I0818 23:38:41.789844 IO-1/EL  buffer_pool.h:26] BufferPool[IOUring[1]-1]: Allocate new buffer, current buffer count is 18
-I0818 23:38:41.789842 IO-2/EL  io_uring.cpp:123] io_uring[2]: register fd 498, 121 registered fds in total
-I0818 23:38:41.789847 IO-0/EL  io_worker.cpp:101] IO-0: New connection of type 0, total of type 0 is 4
-I0818 23:38:41.789843 IO-3/EL  io_worker.cpp:101] IO-3: New connection of type 0, total of type 0 is 3
-I0818 23:38:41.789865 IO-2/EL  buffer_pool.h:26] BufferPool[IOUring[2]-1]: Allocate new buffer, current buffer count is 18
-I0818 23:38:41.789856 IO-1/EL  io_worker.cpp:101] IO-1: New connection of type 0, total of type 0 is 4
-I0818 23:38:41.789870 IO-2/EL  io_worker.cpp:101] IO-2: New connection of type 0, total of type 0 is 4
-I0818 23:38:41.789931 IO-3/EL  io_uring.cpp:123] io_uring[3]: register fd 499, 120 registered fds in total
-I0818 23:38:41.789942 IO-3/EL  buffer_pool.h:26] BufferPool[IOUring[3]-1]: Allocate new buffer, current buffer count is 18
-I0818 23:38:41.789946 IO-3/EL  io_worker.cpp:101] IO-3: New connection of type 0, total of type 0 is 4
-I0818 23:38:41.790602 IO-0/EL  io_uring.cpp:123] io_uring[0]: register fd 500, 122 registered fds in total
-I0818 23:38:41.790617 IO-0/EL  buffer_pool.h:26] BufferPool[IOUring[0]-1]: Allocate new buffer, current buffer count is 19
-I0818 23:38:41.790621 IO-0/EL  io_worker.cpp:101] IO-0: New connection of type 393218, total of type 393218 is 3
-I0818 23:38:41.792132 IO-2/EL  io_uring.cpp:123] io_uring[2]: register fd 502, 122 registered fds in total
-I0818 23:38:41.792149 IO-2/EL  buffer_pool.h:26] BufferPool[IOUring[2]-1]: Allocate new buffer, current buffer count is 19
-I0818 23:38:41.792152 IO-2/EL  io_worker.cpp:101] IO-2: New connection of type 393218, total of type 393218 is 3
-I0818 23:38:41.792107 IO-1/EL  io_uring.cpp:123] io_uring[1]: register fd 501, 122 registered fds in total
-I0818 23:38:41.792167 IO-1/EL  buffer_pool.h:26] BufferPool[IOUring[1]-1]: Allocate new buffer, current buffer count is 19
-I0818 23:38:41.792176 IO-0/EL  io_uring.cpp:123] io_uring[0]: register fd 504, 123 registered fds in total
-I0818 23:38:41.792167 IO-3/EL  io_uring.cpp:123] io_uring[3]: register fd 503, 121 registered fds in total
-I0818 23:38:41.792185 IO-0/EL  buffer_pool.h:26] BufferPool[IOUring[0]-1]: Allocate new buffer, current buffer count is 20
-I0818 23:38:41.792198 IO-0/EL  io_worker.cpp:101] IO-0: New connection of type 393218, total of type 393218 is 4
-I0818 23:38:41.792185 IO-1/EL  io_worker.cpp:101] IO-1: New connection of type 393218, total of type 393218 is 3
-I0818 23:38:41.792205 IO-3/EL  buffer_pool.h:26] BufferPool[IOUring[3]-1]: Allocate new buffer, current buffer count is 19
-I0818 23:38:41.792216 IO-3/EL  io_worker.cpp:101] IO-3: New connection of type 393218, total of type 393218 is 3
-I0818 23:38:41.792247 IO-2/EL  io_uring.cpp:123] io_uring[2]: register fd 506, 123 registered fds in total
-I0818 23:38:41.792261 IO-2/EL  buffer_pool.h:26] BufferPool[IOUring[2]-1]: Allocate new buffer, current buffer count is 20
-I0818 23:38:41.792264 IO-2/EL  io_worker.cpp:101] IO-2: New connection of type 393218, total of type 393218 is 4
-I0818 23:38:41.792292 IO-3/EL  io_uring.cpp:123] io_uring[3]: register fd 507, 122 registered fds in total
-I0818 23:38:41.792305 IO-3/EL  buffer_pool.h:26] BufferPool[IOUring[3]-1]: Allocate new buffer, current buffer count is 20
-I0818 23:38:41.792309 IO-3/EL  io_worker.cpp:101] IO-3: New connection of type 393218, total of type 393218 is 4
-I0818 23:38:41.792319 IO-1/EL  io_uring.cpp:123] io_uring[1]: register fd 505, 123 registered fds in total
-I0818 23:38:41.792330 IO-1/EL  buffer_pool.h:26] BufferPool[IOUring[1]-1]: Allocate new buffer, current buffer count is 20
-I0818 23:38:41.792335 IO-1/EL  io_worker.cpp:101] IO-1: New connection of type 393218, total of type 393218 is 4
+I0818 23:38:41.789842 IO-2/EL  io_uring.cpp:123] io_uring[2]: register fd 498, 121 registered fds i

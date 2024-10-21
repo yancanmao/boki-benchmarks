@@ -1,0 +1,124 @@
+services:
+  boki-controller:
+    deploy:
+      placement:
+        constraints:
+        - node.hostname == bokiexp-gateway
+      replicas: 1
+    environment: []
+    volumes: []
+  boki-engine:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  boki-gateway:
+    deploy:
+      placement:
+        constraints:
+        - node.hostname == bokiexp-gateway
+      replicas: 1
+    environment: []
+    volumes: []
+  boki-sequencer:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.sequencer_node == true
+        max_replicas_per_node: 1
+      replicas: 3
+    environment: []
+    volumes: []
+  boki-storage:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.storage_node == true
+        max_replicas_per_node: 1
+      replicas: 3
+    environment: []
+    volumes: []
+  retwis-follow:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  retwis-init:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  retwis-login:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  retwis-post:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  retwis-post-list:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  retwis-profile:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  retwis-register:
+    deploy:
+      placement:
+        constraints:
+        - node.labels.engine_node == true
+        max_replicas_per_node: 1
+      replicas: 8
+    environment: []
+    volumes: []
+  zookeeper:
+    deploy:
+      placement:
+        constraints:
+        - node.hostname == bokiexp-gateway
+      replicas: 1
+    environment: []
+    volumes: []
+  zookeeper-setup:
+    deploy:
+      placement:
+        constraints:
+        - node.hostname == bokiexp-gateway
+      replicas: 1
+    environment: []
+    volumes: []
+version: '3.8'

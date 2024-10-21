@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# ==== READ BEFORE USE ====
+# This sccript will setup ssh client on the current machine to use the SSH
+# key below to login all hosts matching `*.compute.internal`. Please check
+# your current `~/.ssh/config` to see if it conflicts with other entires.
+# Boki's base VM image (`ami-0c6de836734de3280`) is hard-coded to trust
+# the private key below. But be aware that this key is not really private,
+# and do not use this key beyond the scope of Boki experiments.
+
+cat >> ~/.ssh/config << EOF1
+
+Host *.compute.internal
+    User ubuntu
+    IdentityFile ~/.ssh/boki-experiments.pem
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+EOF1
+
+cat > ~/.ssh/boki-experiments.pem << EOF2
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAiXQaqf2Z6NOOXnbqyGnAeNCrbgaQ1H3i8YcY+yR6L96Mln9I
+IiRAWIPehgcqMuXQ+iksDR9lq4+ycDQNL3xbQkPSozTUUpgWW4eI2FyMIXGdESRf
+D5lCfwSamHY86xPXXLNNeR0rb+4/J74bCz8Er6pLCJucurgKHWJQ5RBF0PNOrN9k
+lqJAW+5wblZdRnT2jZ8EsDzySdhKWfKeej84TvsNUxeNI95Wv/grZuLBm/smCIyd
+91ZaGhCmBuFpVqoXUqR7fmKqepcWAvzQmNQQM04/yM/W89YIxzaS7GTQB8LTkgwo
+0orHuPQB5F4Eh/wjKQrdiQAOPwgTQ2OoKj4KDwIDAQABAoIBAAl2lN9fNllxNzwJ
+s+BYZ4fp1eOdUBtRD27RfkbMHB1vlP5HhQ/Urxlo+sj/dUhLyjdu3jmJD9bf7ckL
+zFyYky/cu4PA/10wW1mx2xoKRRuIVuf3ORQ52Poltv8IJOmKVCltrsfH2lW6cV6r
+F/GORSRS9ReCnye7w/aB7k/W7veTrtVtljvQk/Hw5jMOut0HMd1s6cgXKmLAFvU9
+JESpyArs3ubEUsSDDxHy7mx9DnShKIHO43Zqv0QckX3wOdaKKYAFo49nOXWFBRen
+jniQO4Bt6c0iXvD1S1gCshsfpKnDbGfN9+ku0ItsFPiA45VQ5UtKrfnDlTeuw3Mz
+VRrvWgECgYEAx84KSwZhpsRJRgvxWz53l4dMHYwPOtOJCptYchBXT2SNO4Rb12FU
+4EAODdu+qWx0Lh/A2Q6XyYTm4juaSFSewm5S6bqOfJOC6Ah70nEjQ1BYxfoqYdCy
+xm8n9UBVhI8LtfzBRsjlkn2IJC8wz9h0BFi97S5eGyNy0lK9R2QlXCcCgYEAsBzE
+GQeyFrnd5Sq9LsEQf3GDg+g1vxHbaEsUL/FHanbcA4e95Hbb3pzZwPsOmBcJ2rEA
+H2NmL4M+U4nRlNKck9wygDsL9c2/JuehU3tILCsMf4j2eXzFDsCQw+xqFkkNAbZK
+5ivCnQxoNml/IUUQmKzl1N4s5qrKLqwuE7WAy9kCgYAQjTPzFRs/ymDbiZ+71Efp
+6I5YoEKet+lRVJ8WC95/uC+u738AL5LtZMEFSt/XfyF8tKqwEHJogjbyJMfaGBBy
+wNrje83T6hBdEl7XhwHJ0L0Z4WhjY/t7Trf7rBGpgoQQ1lhYecnywa1mefZMMX0i
+4wsQu9eV3fDkFXCSmmwx3wKBgES8hYErcsPR+ZxXSQ11hyXmvSj/ufKAWr1jCFcJ
++hDAoXCzS1dfWMOTPp5GntSXsV3s1ZpqpliHBg1+7hEC/t/rAr7vzOQ8UI4zu9Ck
+fm/WwYMJhwG1xAfU+uutW16lVnFDoAokLEo1rHsIQ/lNRoQAf5fMu4OwR0deJoHE
+xqdJAoGAR+uOjQVH8tEQUWjS3lStpAjrzUL6Z7Yv22QhxUcepd1q4IgJz1BS3/+j
+tvPVWbdtrrd6OKgawr6EccE5zgTmfZpkZAbigRSAAXJMOjkhjUmbfFQJm+A3Q2GO
+sVGJAlsDu6jS9XOsoGIyN7AAcPy8iCuqLjIK09lEW07Pr+Y20n0=
+-----END RSA PRIVATE KEY-----
+EOF2
+
+chmod 0600 ~/.ssh/boki-experiments.pem
+
